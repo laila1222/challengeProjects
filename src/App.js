@@ -1,7 +1,9 @@
 import React from "react";
 import CounterSection from "./components/CounterSection/CounterSection";
 import PersonsSection from "./components/PersonsSection/PersonsSection";
+import Footer from "./components/Footer/Footer";
 import "./globalStyles/styles.css";
+
 
 /*
 
@@ -31,6 +33,7 @@ export default function App() {
     <div className="App">
       <CounterSection />
       <PersonsSection  />
+      <Footer/>
     </div>
   );
 }

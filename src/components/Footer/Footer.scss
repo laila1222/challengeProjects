@@ -1,0 +1,18 @@
+@import '../../globalStyles/_variables';
+
+.footer {
+    min-height: 3rem;
+    background-color: $color-primary;
+
+    &__text {
+        text-align: center;
+        padding: 1rem;
+        font-family: "Raleway", sans-serif;
+        color: $color-secondary;
+        
+    }
+
+    &__link {
+        color: $color-secondary;
+    }
+}
