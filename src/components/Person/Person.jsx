@@ -2,7 +2,7 @@ import React from "react";
 import "./Person.scss";
 
 const Person = ({ person }) => {
-    // console.log(person);
+  // console.log(person);
   return (
     <div className="person">
       <div className="person__header">
@@ -10,11 +10,12 @@ const Person = ({ person }) => {
       </div>
       <h3 className="person__title">{person.name}</h3>
       <p className="person__age">{person.age}</p>
-      {/* {hobbies && <h4 className="person__extra">Hobbies</h4>}
-      {work && <h4 className="person__extra">Work</h4>} */} 
-       <ul className="person__list">
+      <ul className="person__list">
+          {/* Listing hobbies or work */}
         {person.hobbies ? (
-          person.hobbies.map((hobby) => <li className="person__hobby">{hobby}</li>)
+          person.hobbies.map((hobby) => (
+            <li className="person__hobby">{hobby}</li>
+          ))
         ) : (
           <li className="person__work">{person.work}</li>
         )}

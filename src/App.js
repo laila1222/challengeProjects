@@ -1,8 +1,7 @@
 import React from "react";
 import CounterSection from "./components/CounterSection/CounterSection";
 import PersonsSection from "./components/PersonsSection/PersonsSection";
-import "./styles.css";
-import { findByAltText } from "@testing-library/react";
+import "./globalStyles/styles.css";
 
 /*
 
@@ -11,10 +10,6 @@ import { findByAltText } from "@testing-library/react";
  camelCase, snake_casing or PascalCasing
  This should be placed into a lifecycle hook, so the data is filtered, 
  when the component mounts/loads
- done
-
-
-
 
 
 //2 create a function/component, that displays only persons, with unqieu hobbies
@@ -32,8 +27,6 @@ import { findByAltText } from "@testing-library/react";
 */
 
 export default function App() {
-
-
   return (
     <div className="App">
       <CounterSection />

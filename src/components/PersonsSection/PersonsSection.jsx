@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Person from "../Person/Person";
 import "./PersonsSection.scss";
 
@@ -45,39 +45,43 @@ const originalData = [
   },
 ];
 
-// Same naming convention
+// Camelcase naming convention
 const applyConvention = (data) => {
-  console.log("fired");
-  const modifiedHobbies = data.map((person) => {
-    let lowerCaseHobbies;
-    // Check if person has hobbies
-    if (person.hobbies) {
-      lowerCaseHobbies = person.hobbies.map((hobby) => {
-        // In case there are more words in a hobby
-        if (hobby.includes(" ")) {
-          const joinedHobby = hobby
-            .split(" ")
-            .map((word, index) => {
-              // Lowercase all characters in the first word
-              if (index === 0) {
-                return word.toLowerCase();
-              }
-              // Capitalize second (or third, etc.) word, and join the words
-              return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-            })
-            .join("");
-          return joinedHobby;
-        } else {
-          // Turn all hobbies into lowercase that only contains one word
-          return hobby.toLowerCase();
-        }
-      });
-      person.hobbies = lowerCaseHobbies;
-    }
-  });
+  const modifyHobbies = () =>
+    data.map((person) => {
+      let lowerCaseHobbies;
+      // Check if person has hobbies
+      if (person.hobbies) {
+        lowerCaseHobbies = person.hobbies.map((hobby) => {
+          // In case there are more words in a hobby
+          if (hobby.includes(" ")) {
+            const joinedHobby = hobby
+              .split(" ")
+              .map((word, index) => {
+                // Lowercase all characters in the first word
+                if (index === 0) {
+                  return word.toLowerCase();
+                }
+                // Capitalize second (or third, etc.) word, and join the words
+                return (
+                  word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                );
+              })
+              .join("");
+            return joinedHobby;
+          } else {
+            // Turn all hobbies into lowercase that only contains one word
+            return hobby.toLowerCase();
+          }
+        });
+        person.hobbies = lowerCaseHobbies;
+      }
+    });
+  modifyHobbies();
   return data;
 };
 
+// Find people with only unique hobbies
 const findUniquePersons = (data) => {
   // Remove people with no hobbies
   const peopleWithHobbies = data.filter((person) => person.hobbies);
@@ -106,25 +110,25 @@ const findUniquePersons = (data) => {
   return uniquePerson;
 };
 
-const peopleWithUniqueHObbies = findUniquePersons(originalData);
-// console.log(peopleWithUniqueHObbies);
-// console.log(findUniquePersons(originalData));
-
 const PersonsSection = () => {
   const [data, setData] = useState([]);
   const [isFiltered, setIsFiltered] = useState(false);
+
+  //   Naming convention is applied once
   useEffect(() => {
     setData(applyConvention(originalData));
   }, []);
 
+  //   User clicked 'Show people with unique hobbies' button
   const uniqueHobbiesClicked = () => {
     // 'All people' button appears
     setIsFiltered(true);
     setData(findUniquePersons(data));
   };
 
+  //   User clicked 'Show all people' button
   const allPeopleClicked = () => {
-      setIsFiltered(false);
+    setIsFiltered(false);
     setData(applyConvention(originalData));
   };
 

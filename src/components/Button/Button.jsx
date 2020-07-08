@@ -1,7 +1,7 @@
 import React from "react";
-import './Button.scss';
+import "./Button.scss";
 
-const Button = ({onClickAction, title}) => {
+const Button = ({ onClickAction, title }) => {
   return (
     <>
       <button className="counter-button" onClick={onClickAction}>

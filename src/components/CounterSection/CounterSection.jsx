@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import Button from "../Button/Button";
 import "./CounterSection.scss";
 
+// Increments to next uneven number
 const incrementToUneven = (currentCount) => {
   // If current count is even
   if (currentCount % 2 === 0) {
@@ -12,9 +13,8 @@ const incrementToUneven = (currentCount) => {
   }
 };
 
-// Have to set error message if current count is 1 or below 1
+// Decreases counter to next prime number if counter is bigger than 1
 const decreaseToNextPrime = (currentCount) => {
-  // let nextNumber = currentCount - 1;
   for (let nextNumber = currentCount - 1; nextNumber > 1; nextNumber--) {
     if (isPrime(nextNumber)) {
       return nextNumber;
@@ -23,7 +23,7 @@ const decreaseToNextPrime = (currentCount) => {
   return currentCount;
 };
 
-// Check if number is prime
+// Check if a number is prime
 const isPrime = (number) => {
   if (number <= 1) {
     return false;
@@ -125,7 +125,9 @@ const CounterSection = () => {
           />
         </div>
       </div>
-      <a href="#persons-section" className="counter__down-arrow">&darr;</a>
+      <a href="#persons-section" className="counter__down-arrow">
+        &darr;
+      </a>
     </div>
   );
 };
