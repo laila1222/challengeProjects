@@ -1,0 +1,60 @@
+@import "../../_variables";
+
+.person {
+  width: 26%;
+  background-color: $color-grey;
+  margin: 1rem auto;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.58);
+  
+  transition: all .3s;
+
+  &__header {
+    height: 8rem;
+    position: relative;
+
+    &__fake-img {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-color: $color-white;
+      border-radius: 50%;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__title {
+      font-size: 1.5rem;
+      margin: 1rem 0 .5rem 0;
+  }
+
+  &__age {
+      font-size: 1.2rem;
+      margin-bottom: .7rem;
+  }
+
+  &__extra {
+      
+      text-decoration: underline;
+  }
+
+  &__list {
+      display: flex;
+      list-style: none;
+      margin-bottom: 1rem;
+  }
+
+  &__hobby, &__work {
+      display: inline-block;
+      margin: 1rem auto;
+
+
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+}
+}

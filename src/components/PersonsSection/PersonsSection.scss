@@ -1,0 +1,47 @@
+@import "../../_variables";
+
+.persons {
+  height: 100%;
+  min-height: 95vh;
+  background-color: rgba($color-secondary, 0.3);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__title {
+    font-family: "Raleway", sans-serif;
+    font-size: 2rem;
+    text-shadow: -1px 3px 6px rgba(8, 43, 86, 0.75);
+    text-align: center;
+    margin: 2rem auto 3rem auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  &__button-container {
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    background-color: transparent;
+    color: $color-primary;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 30px;
+    border: 2px solid $color-primary;
+    display: block;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}

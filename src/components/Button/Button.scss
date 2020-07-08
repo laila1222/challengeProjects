@@ -1,0 +1,22 @@
+@import '../../_variables';
+
+.counter-button {
+    background-color: transparent;
+    color: $color-secondary;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 2px solid $color-secondary;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: $color-secondary;
+        color: $color-primary;
+
+    }
+
+}
